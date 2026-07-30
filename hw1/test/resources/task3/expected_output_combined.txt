@@ -1,0 +1,15 @@
+algorithm - driver, malum, xFILES
+apple - driver
+baca - fruit
+bacca - fruit
+fruit - driver
+function - driver, fruit
+malum - apple, driver, punishment
+multa - punishment
+pomum - apple
+popula - algorithm, apple
+popum - fruit
+programming - driver, xFILES
+xFILES - fruit, xFILES
+y - xFILES
+z - driver, xFILES

@@ -1,0 +1,4 @@
+1       4      16 test/resources/task5/test_input_1.txt
+3      93     575 test/resources/task5/test_input_2.txt
+4     292    2024 test/resources/task5/test_input_3.txt
+8     389    2615 total

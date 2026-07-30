@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Mission Control — Dashboard{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <h2>Spaceport Status Overview</h2>
+
+    <div class="spaceport-grid">
+        {% for key, sp in spaceports.items() %}
+        <div class="spaceport-card">
+            <div class="card-header">
+                {# --------------------------------------------------------- #}
+                {# Задача 5.1 (бонус): добавьте индикатор статуса             #}
+                {#                                                            #}
+                {# Используйте statuses[key], чтобы получить LaunchVerdict.   #}
+                {# Отобразите цветной кружок:                                 #}
+                {#   go      → class="status-indicator go"                    #}
+                {#   no_go   → class="status-indicator no-go"                 #}
+                {#   caution → class="status-indicator caution"               #}
+                {#   None    → class="status-indicator unknown"               #}
+                {# --------------------------------------------------------- #}
+                <span class="status-indicator unknown"></span>
+                <h3>{{ sp.name }}</h3>
+            </div>
+            <p class="country">{{ sp.country }}</p>
+            <p class="coords">
+                {{ "%.2f"|format(sp.coordinates.latitude) }}&deg;,
+                {{ "%.2f"|format(sp.coordinates.longitude) }}&deg;
+            </p>
+            <a href="/spaceports/{{ key }}" class="detail-link">Details &rarr;</a>
+        </div>
+        {% else %}
+        <p class="no-data">No spaceports loaded. Check API connection.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
